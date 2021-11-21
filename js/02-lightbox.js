@@ -21,12 +21,11 @@ galleryEl.insertAdjacentHTML('beforeend', imageMarkUp);
 
 
 const gallery = new SimpleLightbox(".gallery a", {
-    captionSelector: "img", //Переключение на имидж
-    captionsData: "alt", //Получение текста из Алт
-    captionPosition: "bottom", //Подпись внизу
-    captionDelay: 250, //Задержка 250 мс
-    showCounter: false, //Счетчик выключен
-    scrollZoom: false, //Масштабирование скролом отключено
+    captionSelector: "img",
+    captionsData: "alt",
+    captionPosition: "bottom",
+    captionDelay: 250,
+
 });
 
 const onEsc = function(evt) {
