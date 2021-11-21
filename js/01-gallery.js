@@ -44,7 +44,7 @@ const openGallery = function(evt) {
     evt.preventDefault();
 
 
-    if (evt.target.classList.value !== "gallery__image") {
+    if (evt.target.nodeName !== "IMG") {
         return;
     }
 

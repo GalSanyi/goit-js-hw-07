@@ -20,9 +20,13 @@ const imageMarkUp = galleryItems
 galleryEl.insertAdjacentHTML('beforeend', imageMarkUp);
 
 
-let lightbox = new SimpleLightbox('.gallery a');
-lightbox.on('show.simplelightbox', function() {
-
+const gallery = new SimpleLightbox(".gallery a", {
+    captionSelector: "img", //Переключение на имидж
+    captionsData: "alt", //Получение текста из Алт
+    captionPosition: "bottom", //Подпись внизу
+    captionDelay: 250, //Задержка 250 мс
+    showCounter: false, //Счетчик выключен
+    scrollZoom: false, //Масштабирование скролом отключено
 });
 
 const onEsc = function(evt) {
@@ -37,7 +41,7 @@ const openGallery = function(evt) {
     evt.preventDefault();
 
 
-    if (evt.target.classList.value !== "gallery__image") {
+    if (evt.target.nodeName !== "IMG") {
         return;
     }
 
